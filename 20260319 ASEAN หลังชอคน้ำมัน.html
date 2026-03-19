@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASEAN Oil Price Shock Analysis 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        /* Custom Colors from User */
+        .color-blue { color: #0064FF; }
+        .bg-blue { background-color: #0064FF; }
+        .border-blue { border-color: #0064FF; }
+
+        .color-red { color: #EF3C67; }
+        .bg-red { background-color: #EF3C67; }
+        .border-red { border-color: #EF3C67; }
+
+        .color-green { color: #61D09C; }
+        .bg-green { background-color: #61D09C; }
+        .border-green { border-color: #61D09C; }
+
+        .color-burgundy { color: #7A0334; }
+        .bg-burgundy { background-color: #7A0334; }
+        .border-burgundy { border-color: #7A0334; }
+
+        .color-purple { color: #9E50CC; }
+        .bg-purple { background-color: #9E50CC; }
+        .border-purple { border-color: #9E50CC; }
+
+        .color-pink { color: #F47C99; }
+        .bg-pink { background-color: #F47C99; }
+
+        .color-orange { color: #FF6600; }
+        .bg-orange { background-color: #FF6600; }
+        .border-orange { border-color: #FF6600; }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            padding: 24px;
+            margin-bottom: 24px;
+            border-top: 4px solid;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th {
+            background-color: #f1f5f9;
+            text-align: left;
+            padding: 12px;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .radar-polygon { transition: all 0.5s ease-in-out; }
+        .legend-btn.active { border-color: currentColor; background-color: white; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); opacity: 1; }
+        .legend-btn.inactive { opacity: 0.4; filter: grayscale(1); border-color: transparent; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <header class="max-w-6xl mx-auto text-center mb-12">
+        <h1 class="text-3xl md:text-5xl font-bold color-blue mb-4">
+            ASEAN หลังช็อกราคาน้ำมัน: ใครเปราะบาง ใครมี Upside
+        </h1>
+        <p class="text-xl color-burgundy font-semibold mb-6">
+            วิเคราะห์วิกฤตช่องแคบฮอร์มุซ 2026 และความแข็งแกร่งทางเศรษฐกิจของภูมิภาค
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+            <span class="px-3 py-1 bg-blue text-white rounded-full text-sm">Oil Shock 2026</span>
+            <span class="px-3 py-1 bg-red text-white rounded-full text-sm">Energy Security</span>
+            <span class="px-3 py-1 bg-green text-white rounded-full text-sm">ASEAN Resilience</span>
+        </div>
+
+        <!-- Button to Full Document -->
+        <div class="flex justify-center">
+            <a href="https://bblasset.sharepoint.com/:w:/r/sites/EconUpdate_Research/Econ%20Research%20Publication/9.%20ASEAN%20Weekly%20Review/20260319%20Oil%20Price%20Shock%20and%20ASEAN.docx?d=we105831579c84890af22670f931ce316&csf=1&web=1&e=gBONJA" 
+               target="_blank" 
+               class="inline-flex items-center px-8 py-3 bg-blue text-white font-bold rounded-2xl hover:bg-blue/90 transition-all shadow-lg hover:shadow-blue/30 transform hover:-translate-y-1">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Click to Full Document
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto">
+        
+        <!-- Executive Summary -->
+        <section class="card border-blue">
+            <h2 class="text-2xl font-bold color-blue mb-4">Executive Summary</h2>
+            <p class="mb-4 leading-relaxed">
+                วิกฤตการปิดช่องแคบฮอร์มุซในปี 2026 สร้างแรงสั่นสะเทือนต่อระบบพลังงานโลกแบบ non-linear กระทบการขนส่งน้ำมันดิบ 10–15 ล้านบาร์เรลต่อวัน 
+                แรงกระแทกครั้งนี้ทำหน้าที่เป็น <strong>“แรงฉุดต่อการเติบโต”</strong> มากกว่าจะเป็นเพียงแรงดันเงินเฟ้อระยะสั้น โดยเฉพาะอาเซียนที่พึ่งพาเส้นทางนี้ถึง 73% 
+                ของปริมาณนำเข้าน้ำมันรวม
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 text-sm">
+                <div class="p-4 border-l-4 border-red bg-red/5">
+                    <strong class="color-red block">High Vulnerability</strong>
+                    ฟิลิปปินส์
+                </div>
+                <div class="p-4 border-l-4 border-orange bg-orange/5">
+                    <strong class="color-orange block">Medium Risk</strong>
+                    ไทย, สิงคโปร์, อินโดนีเซีย, เวียดนาม
+                </div>
+                <div class="p-4 border-l-4 border-green bg-green/5">
+                    <strong class="color-green block">Low Vulnerability / Upside</strong>
+                    มาเลเซีย (Net Energy Exporter)
+                </div>
+            </div>
+        </section>
+
+        <!-- Spider Web Section -->
+        <section class="card border-slate-300">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6">ASEAN Economic Strength Radar 2026</h2>
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Radar Chart -->
+                <div class="flex-1 flex flex-col items-center justify-center bg-slate-50 rounded-2xl p-4 border border-slate-100">
+                    <svg id="radarChart" viewBox="0 0 500 500" class="w-full max-w-[500px] h-auto"></svg>
+                </div>
+                <!-- Controls -->
+                <div class="w-full lg:w-80 flex flex-col gap-6">
+                    <div class="bg-white p-4 rounded-xl border border-slate-100">
+                        <h3 class="text-md font-bold text-slate-800 mb-3 flex items-center gap-2">
+                            <div class="w-1.5 h-4 bg-[#0064FF] rounded-full"></div>
+                            เลือกดูข้อมูลประเทศ
+                        </h3>
+                        <div id="controls" class="flex flex-wrap lg:flex-col gap-2"></div>
+                    </div>
+                    <div class="bg-slate-100/50 p-4 rounded-xl text-sm leading-relaxed">
+                        <h4 class="font-bold text-slate-800 mb-2">💡 Key Insights</h4>
+                        <p class="mb-2"><span class="font-bold color-green">Strong:</span> มาเลเซียมี Profile แข็งแกร่งที่สุด</p>
+                        <p class="mb-2"><span class="font-bold color-red">Weak:</span> ฟิลิปปินส์มีจุดเปราะบางที่ต้องเฝ้าระวังมากที่สุด</p>
+                        <p class="text-xs italic opacity-75">*ระดับความแข็งแกร่ง 1-3 (3 คือแข็งแกร่งที่สุด)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screening Tool Table -->
+        <section class="card border-purple">
+            <h2 class="text-2xl font-bold color-purple mb-4">วัตถุประสงค์การใช้พลังงานและความเสี่ยงแยกตามประเทศ</h2>
+            <div class="overflow-x-auto">
+                <table class="text-sm">
+                    <thead>
+                        <tr>
+                            <th>ประเทศ</th>
+                            <th>บริโภค Oil+Gas</th>
+                            <th>ก๊าซในไฟฟ้า</th>
+                            <th>ดุล Oil & Gas</th>
+                            <th>Current Account</th>
+                            <th>พึ่งพา Hormuz</th>
+                            <th class="text-center">ความเสี่ยง</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold">ฟิลิปปินส์</td><td>46%</td><td>~15%</td><td>-2.6%</td><td>-3.9%</td><td>40–70%</td><td class="text-center bg-red/10 color-red font-bold">สูง</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">ประเทศไทย</td><td>81%</td><td>45–60%</td><td>-5.5%</td><td>+2.4%</td><td>40–70%</td><td class="text-center bg-orange/10 color-orange font-bold">กลาง-สูง</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">สิงคโปร์</td><td>99%</td><td>~95%</td><td>+0.3%</td><td>+15.6%</td><td>ทางอ้อม</td><td class="text-center bg-orange/10 color-orange font-bold">กลาง-สูง</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">อินโดนีเซีย</td><td>45%</td><td>~20%</td><td>-1.4%</td><td>-0.9%</td><td>ทางอ้อม</td><td class="text-center bg-blue/10 color-blue font-bold">ต่ำ-กลาง</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">มาเลเซีย</td><td>69%</td><td>~40%</td><td>+1.1%</td><td>+2.0%</td><td>ทางอ้อม</td><td class="text-center bg-green/10 color-green font-bold">ต่ำ</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">เวียดนาม</td><td>~30%</td><td>~20%</td><td>N/A</td><td>+3.3%</td><td>ทางอ้อม</td><td class="text-center bg-blue/10 color-blue font-bold">กลาง</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Inflation & GDP Impact -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="card border-orange">
+                <h2 class="text-xl font-bold color-orange mb-4">Inflation Outlook ($100 Oil)</h2>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center text-sm">
+                        <span>Indonesia (Target 2.5±1%)</span>
+                        <span class="font-bold color-red">3.7% (Risk High)</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span>Philippines (Target 3.0±1%)</span>
+                        <span class="font-bold color-red">3.6% (Risk High)</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span>Thailand (Target 1-3%)</span>
+                        <span class="font-bold color-green">1.7% (Safe)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card border-pink">
+                <h2 class="text-xl font-bold color-pink mb-4">GDP Impact (-ppt) ต่อ Oil/Gas +10%</h2>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-xs mb-1"><span>Philippines</span><span>-0.45 ppt</span></div>
+                        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-red h-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs mb-1"><span>Thailand / Singapore</span><span>-0.30 ppt</span></div>
+                        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-orange h-full" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs mb-1"><span>Indonesia / Malaysia</span><span>-0.10 ppt</span></div>
+                        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-blue h-full" style="width: 20%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Measures -->
+        <section class="card border-burgundy">
+            <h2 class="text-2xl font-bold color-burgundy mb-4">มาตรการพลังงานรายประเทศ</h2>
+            <div class="overflow-x-auto">
+                <table class="text-sm">
+                    <thead>
+                        <tr class="bg-burgundy text-white">
+                            <th class="p-3">ประเทศ</th>
+                            <th class="p-3">มาตรการหลัก</th>
+                            <th class="p-3">ผลกระทบการคลัง</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ไทย</strong></td>
+                            <td>ตรึงดีเซล 29.94 บาท/ลิตร, เตรียมปรับขึ้น 2 บาท</td>
+                            <td>กองทุนน้ำมันติดลบ 1,000 ลบ./วัน </td>
+                        </tr>
+                        <tr>
+                            <td><strong>อินโดนีเซีย</strong></td>
+                            <td>อุดหนุนเชื้อเพลิง, เร่งผสม B50 Diesel / E20 Ethanol</td>
+                            <td>ขาดดุลงบประมาณอาจแตะ 3.6% (เกินเพดาน 3%)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>มาเลเซีย</strong></td>
+                            <td>ตรึงราคา RON95, ใช้มาตรการประหยัดพลังงานภาครัฐ</td>
+                            <td>ภาระอุดหนุนสูงขึ้น แต่มีรายได้ส่งออกพลังงานชดเชย</td>
+                        </tr>
+                        <tr>
+                            <td><strong>สิงคโปร์</strong></td>
+                            <td>ไม่ตรึงราคา แต่เน้น dual-fuel และ U-Save Rebates</td>
+                            <td>ฐานะการคลังยังแข็งแกร่ง ไม่มีภาระอุดหนุนโดยตรง</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Investment Perspective -->
+        <section class="card border-green mb-12">
+            <h2 class="text-2xl font-bold color-green mb-4">Investment Perspective</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-4 bg-slate-50 rounded-xl">
+                    <h3 class="font-bold color-blue mb-2">Malaysia: Safe Haven</h3>
+                    <p class="text-xs leading-relaxed">เป็น Net Energy Exporter ราคาน้ำมันสูงช่วยเพิ่ม Fiscal Cushion และลดแรงกดดันต่อค่าเงินริงกิต</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-xl">
+                    <h3 class="font-bold color-orange mb-2">Indonesia: Priced-in</h3>
+                    <p class="text-xs leading-relaxed">รับข่าวร้ายเรื่องดัชนี MSCI ไปมากแล้ว มองเป็น "Laggard" ที่มีโอกาสรีบาวด์หากสถานการณ์นิ่ง</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-xl">
+                    <h3 class="font-bold color-red mb-2">Thailand: Political Catalyst</h3>
+                    <p class="text-xs leading-relaxed">แม้เปราะบางด้านพลังงาน แต่มี Catalyst จากการ Form รัฐบาลใหม่ ซึ่งอาจช่วยชดเชย Sentiment เชิงลบ</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Summary -->
+        <footer class="bg-blue text-white p-8 rounded-3xl mb-12 shadow-xl">
+            <h2 class="text-2xl font-bold mb-4">สรุปรายงาน (Conclusion)</h2>
+            <p class="leading-relaxed opacity-90 text-sm md:text-base">
+                วิกฤตพลังงานในปี 2026 คือบททดสอบความแข็งแกร่งของเศรษฐกิจอาเซียน ฟิลิปปินส์และไทย คือจุดเปราะบางที่ต้องจับตาเป็นพิเศษ 
+                ในขณะที่มาเลเซียยังคงเป็น "Safe Haven" ที่สำคัญ กลยุทธ์ของธนาคารกลางส่วนใหญ่คือการ "Wait and See" 
+                แต่หากราคาน้ำมันยืนเหนือ 100 ดอลลาร์ฯ เป็นเวลานาน การปรับขึ้นดอกเบี้ยเพื่อสกัดเงินเฟ้อจะเป็นสิ่งที่เลี่ยงไม่ได้ 
+                อย่างไรก็ตาม ตลาดยังอาจประเมิน Growth Risks ต่ำเกินไป และประเมินบทบาทของนโยบายการคลังในการพยุงเศรษฐกิจต่ำเกินไปเช่นกัน
+            </p>
+            <div class="mt-6 pt-6 border-t border-white/20 text-xs flex justify-between">
+                <span>Source: UBS, Bloomberg, CLSA, Various Sources</span>
+                <span>© 2026 ASEAN Energy & Economic Insight, BBLAM </span>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        const countries = [
+            { name: 'Malaysia', color: '#61D09C', values: [3, 3, 3, 2, 3], active: true },
+            { name: 'Indonesia', color: '#0064FF', values: [2, 1.5, 2, 1, 2], active: true },
+            { name: 'Vietnam', color: '#F47C99', values: [2, 2.5, 2, 2, 2], active: false },
+            { name: 'Singapore', color: '#9E50CC', values: [1, 3, 2, 3, 2.2], active: false },
+            { name: 'Thailand', color: '#FF6600', values: [1, 2, 2.5, 1.5, 1.75], active: true },
+            { name: 'Philippines', color: '#EF3C67', values: [1, 1, 1, 1, 1], active: false }
+        ];
+
+        const axes = ['Energy Resilience', 'External Balance', 'Inflation Stability', 'Fiscal Space', 'Overall Strength'];
+        
+        const svg = document.getElementById('radarChart');
+        const controls = document.getElementById('controls');
+        
+        const centerX = 250;
+        const centerY = 250;
+        const radius = 160;
+
+        function getCoordinates(index, value) {
+            const angle = (Math.PI * 2 * index) / axes.length - Math.PI / 2;
+            const r = (value / 3) * radius;
+            return {
+                x: centerX + r * Math.cos(angle),
+                y: centerY + r * Math.sin(angle)
+            };
+        }
+
+        function drawChart() {
+            let html = '';
+            
+            [1, 2, 3].forEach(level => {
+                const r = (level / 3) * radius;
+                html += `<circle cx="${centerX}" cy="${centerY}" r="${r}" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="${level === 3 ? '0' : '4 4'}"></circle>`;
+            });
+
+            axes.forEach((axis, i) => {
+                const angle = (Math.PI * 2 * i) / axes.length - Math.PI / 2;
+                const endX = centerX + radius * Math.cos(angle);
+                const endY = centerY + radius * Math.sin(angle);
+                
+                html += `<line x1="${centerX}" y1="${centerY}" x2="${endX}" y2="${endY}" stroke="#94a3b8" stroke-width="1"></line>`;
+                
+                const labelOffset = 35;
+                const lx = centerX + (radius + labelOffset) * Math.cos(angle);
+                const ly = centerY + (radius + labelOffset) * Math.sin(angle);
+                const cos = Math.cos(angle);
+                let anchor = "middle";
+                if (cos > 0.2) anchor = "start";
+                else if (cos < -0.2) anchor = "end";
+
+                const words = axis.split(' ');
+                html += `<text x="${lx}" y="${ly}" text-anchor="${anchor}" class="font-bold fill-slate-600" style="font-size: 11px;">`;
+                words.forEach((word, idx) => {
+                    html += `<tspan x="${lx}" dy="${idx === 0 ? 0 : 14}">${word}</tspan>`;
+                });
+                html += `</text>`;
+            });
+
+            countries.filter(c => c.active).forEach(country => {
+                const points = country.values.map((v, i) => {
+                    const coord = getCoordinates(i, v);
+                    return `${coord.x},${coord.y}`;
+                }).join(' ');
+
+                html += `<polygon points="${points}" fill="${country.color}" fill-opacity="0.2" stroke="${country.color}" stroke-width="3" stroke-linejoin="round" class="radar-polygon"></polygon>`;
+                
+                country.values.forEach((v, i) => {
+                    const coord = getCoordinates(i, v);
+                    html += `<circle cx="${coord.x}" cy="${coord.y}" r="4" fill="white" stroke="${country.color}" stroke-width="2"></circle>`;
+                });
+            });
+
+            svg.innerHTML = html;
+        }
+
+        function createControls() {
+            controls.innerHTML = '';
+            countries.forEach((country, index) => {
+                const btn = document.createElement('button');
+                btn.className = `legend-btn flex items-center px-3 py-2 rounded-lg border-2 text-xs font-bold transition-all flex-grow lg:flex-grow-0 ${country.active ? 'active' : 'inactive'}`;
+                btn.style.color = country.color;
+                btn.innerHTML = `
+                    <div class="w-2.5 h-2.5 rounded-full mr-2" style="background-color: ${country.color}"></div>
+                    <span class="text-slate-700">${country.name}</span>
+                `;
+                btn.onclick = () => {
+                    countries[index].active = !countries[index].active;
+                    createControls();
+                    drawChart();
+                };
+                controls.appendChild(btn);
+            });
+        }
+
+        createControls();
+        drawChart();
+    </script>
+</body>
+</html>
